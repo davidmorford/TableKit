@@ -1,0 +1,64 @@
+# TableKit
+
+A sub-classable model and view controller library for UITableView. TableKit controllers and table view cells are designed for easy subclassing and provides default implementations for the majority of UITableView data source and delegate usage patterns, including editing and reordering management and expandable sections.
+
+## TableKit Components
+
+---
+
+* Protocol definitions for table section and row objects (TVKTable.h)
+
+* TVKTableGroup and TVKTableItem - Default implmentations of the TVKTableSection and TVKTableRow protocols. TVKTableItem initializers create table view cells based on the four default table view styles of UITableViewCell as well as variable sized table row. TVKTableGroup supports expandable sections. (TVKTableItem.h)
+
+* TVKTableController - A subclass of UXArrayController from ControllerKit. Implements UITableViewDataSource and UITableViewDelegate with content management via TVKTableSection methods. Supports subclassing and includes an initial managed object subclass. (TVKTableController.h)
+
+* TVKTableViewController - Subclassable UIViewController with UITableView and numerous settable properties. (TVKTableViewController.h)
+
+* TVKTableViewCell - Root table view cell subclass with editing and content view subclasses. (TVKTableViewCell.h)
+
+
+## TableKit Dependencies (Included)
+
+---
+
+* ControllerKit - Simple implementations, seperated from UXKit, based on the NSController, NSObjectController and NSArrayController classes/patterns in AppKit from Mac OS X.
+
+* StorageKit - The managed object implementation in ControllerKit and TableKit require CoreData and reference StorageKit for the a default object store implementation.
+
+* Foundation.framework
+* CoreData.framework
+* UIKit.framework
+
+
+## TVKTableCatalog Example (Included)
+
+---
+
+Included in the Examples directory of the source tree is an example of subclassing TVKTableViewController with both plain and grouped table styles and table view cells.
+
+
+## BuildKit Usage Notes
+
+---
+
+Like UXKit, TableKit uses the BuildKit infrastructure to share build configurations, managing project layout and builds and facilitate sharing of libraries.
+
+* BuildKit uses the latest iPhone OS SDK and sets the iPhone OS Deployment Target. Please be aware of the implications of this and how to implement compatability checks by using class, method and function symbols.
+
+## TableKit License
+
+---
+
+Copyright 2009 Semantap
+ 
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+ 
+   http://www.apache.org/licenses/LICENSE-2.0
+ 
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
